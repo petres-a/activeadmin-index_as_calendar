@@ -1,15 +1,15 @@
 <div id="fullCalendar"></div>
-<div class="container">
-  <p>Legend</p>
-  <div class="row">
-    <% unless @designers.blank? %>
+<% unless @designers.blank? %>
+  <div class="container">
+    <p>Legend</p>
+    <div class="row">
       <% @designers.each do |designer| %>
         <div class="col-md-6"><%= designer %></div>
         <div class="col-md-6"><%= designer %></div>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <script>
 	$(function(){
