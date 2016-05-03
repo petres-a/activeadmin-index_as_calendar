@@ -67,8 +67,8 @@ module IndexAsCalendar
       else
         index as: :calendar, default: options[:default] do |context|
           context[:fullCalendarOptions] = options[:fullCalendarOptions]
+          @designers = options[:designers]
           events = self.controller.event_mapping(context[:collection], options)
-          designers = options[:designers]
         end
       end
     end
