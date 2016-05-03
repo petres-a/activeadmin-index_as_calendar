@@ -2,12 +2,12 @@
 <% unless designers.blank? %>
   <div class="container">
     <p>Legend</p>
-    <div class="row">
-      <% designers.each do |designer| %>
+    <% designers.each do |designer| %>  
+      <div class="row">
         <div class="col-md-1"><%= designer[:first_name] %></div>
         <div class="col-md-1" style="background-color: #{designer[:color]}"><%= designer[:color] %></div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 <% end %>
 
