@@ -6,10 +6,11 @@ module ActiveAdmin
         add_class "calendar"
         context = {:page_presenter => page_presenter, :collection => collection, :fullCalendarOptions => nil}
         events = instance_exec(context, &page_presenter.block) unless page_presenter.block.blank?
+        designers = page_presenter.designers unless page_presenter.designers.blank?
 
         # Render fullCalendar
         panel "Calendar", id: "calendar" do
-          render :partial => "calendar", locals: {events: events, options: context[:fullCalendarOptions].to_json.html_safe}
+          render :partial => "calendar", locals: {events: events, designers: designers, options: context[:fullCalendarOptions].to_json.html_safe}
         end
       end
 
