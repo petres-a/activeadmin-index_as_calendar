@@ -20,6 +20,11 @@ module IndexAsCalendar
 
       # Defines controller for event_mapping model items to events
       controller do
+        def index
+          @designers = options[:designers]
+          super
+        end
+        
         def event_mapping( items, options )
           events = items.map do |item|
             if !options[:block].blank?
@@ -67,7 +72,6 @@ module IndexAsCalendar
       else
         index as: :calendar, default: options[:default] do |context|
           context[:fullCalendarOptions] = options[:fullCalendarOptions]
-          @designers = options[:designers]
           events = self.controller.event_mapping(context[:collection], options)
         end
       end
