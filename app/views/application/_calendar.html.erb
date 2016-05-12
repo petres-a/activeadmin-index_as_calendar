@@ -1,10 +1,10 @@
 <div id="fullCalendar"></div>
 <% unless designers.blank? %>
   <div class="container">
-    <p>Legend</p>
+    <p>Legende</p>
     <% designers.each do |designer| %>  
       <div class="row">
-        <div class="col-sm-1"><%= designer[:first_name] %></div>
+        <div class="col-sm-2"><%= designer[:first_name] %></div>
         <div class="col-sm-1" style="background-color: <%= designer[:color] %>">&nbsp;</div>
       </div>
     <% end %>
